@@ -1,9 +1,12 @@
 import pandas as pd
 from pathlib import Path
+import os
 
-
-DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "support_tickets.csv"
-
+DATA_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)),
+    "data",
+    "support_tickets.xlsx"
+)
 
 def load_data():
     df = pd.read_excel(DATA_PATH)
